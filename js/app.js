@@ -5,7 +5,7 @@ function Task(content){
 
 function ToDoViewModel(){
   var self = this;
-  self.task = ko.observable("");
+  self.task = new Task("");
 }
 
 ko.applyBindings(new ToDoViewModel());
