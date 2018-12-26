@@ -3,19 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" >
-    function fill(){
-      taskText = document.getElementById('task').value;
-      document.getElementById('taskItem').innerHTML = taskText;
-    }
-
-    </script>
   </head>
   <body>
     <h3>Your To-do task manager</h3>
     <form >
       <input type="text" placeholder="..." id="task">
-      <button type="button" onclick="fill()">Add new task</button>
+      <button type="button" >Add new task</button>
     </form>
     <ul>
       <li id="taskItem"></li>
