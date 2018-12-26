@@ -5,7 +5,7 @@ function Task(content){
 
 function ToDoViewModel(){
   var self = this;
-  self.task = ko.observable("first task");
+  self.task = ko.observable("");
   console.log(self.task());
 
 
