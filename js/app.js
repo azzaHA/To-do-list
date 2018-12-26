@@ -1,11 +1,17 @@
 function Task(content){
   var self = this;
-  self.content = ko.observable(content);
+  self.taskContent = content;
 }
 
 function ToDoViewModel(){
   var self = this;
-  self.task = new Task("");
+  self.newTask = ko.observable('');
+  self.tasks = ko.observableArray([]);
+
+  self.addTask = function(){
+    self.tasks.push(new Task(self.newTask()));
+    console.log(self.tasks());
+  };
 }
 
 ko.applyBindings(new ToDoViewModel());
