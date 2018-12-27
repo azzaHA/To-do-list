@@ -18,6 +18,10 @@ function ToDoViewModel(){
     self.tasks.push(new Task(self.newTask()));
   };
 
+  self.removeTask = function(task){
+    self.tasks.remove(task);
+  };
+
 }
 
 ko.applyBindings(new ToDoViewModel());
