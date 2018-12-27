@@ -11,7 +11,11 @@
       <button type="button" data-bind="click: addTask">Add new task</button>
     <table>
       <tbody data-bind="foreach:tasks">
-        <tr data-bind="text: taskContent"></tr>
+        <tr>
+          <td data-bind="text: taskContent" ></td>
+          <td data-bind="text: isDone"></td>
+          <td><button data-bind="click: toggleTaskState">Check done</button></td>
+        </tr>
       </tbody>
     </table>
     <script type='text/javascript' src='js/knockout-3.4.2.js'></script>
