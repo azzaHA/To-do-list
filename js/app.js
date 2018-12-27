@@ -14,13 +14,21 @@ function ToDoViewModel(){
   self.newTask = ko.observable('');
   self.tasks = ko.observableArray([]);
 
+  self.totalTasks = ko.computed(function(){
+    return self.tasks().length;
+  });
+
   self.addTask = function(){
     self.tasks.push(new Task(self.newTask()));
+    console.log(self.totalTasks());
   };
 
   self.removeTask = function(task){
     self.tasks.remove(task);
+    console.log(self.totalTasks());
   };
+
+
 
 }
 
