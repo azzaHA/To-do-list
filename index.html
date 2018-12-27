@@ -15,6 +15,7 @@
           <td data-bind="text: taskContent" ></td>
           <td data-bind="text: isDone"></td>
           <td><button data-bind="click: toggleTaskState">Check done</button></td>
+          <td><a href="#" data-bind="click: $root.removeTask">Delete</a></td>
         </tr>
       </tbody>
     </table>
