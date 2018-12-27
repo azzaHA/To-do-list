@@ -20,12 +20,10 @@ function ToDoViewModel(){
 
   self.addTask = function(){
     self.tasks.push(new Task(self.newTask()));
-    console.log(self.totalTasks());
   };
 
   self.removeTask = function(task){
     self.tasks.remove(task);
-    console.log(self.totalTasks());
   };
 
 
