@@ -29,6 +29,16 @@ function ToDoViewModel(){
     return total;
   });
 
+  self.remainingTasks = ko.computed(function(){
+    var total = 0;
+    for (var i=0; i<self.tasks().length; i++){
+      if (!self.tasks()[i].isDone()){
+        total++;
+      }
+    }
+    return total;
+  });
+
   self.addTask = function(){
     self.tasks.push(new Task(self.newTask()));
   };
