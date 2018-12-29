@@ -40,6 +40,9 @@ function ToDoViewModel(){
   });
 
   self.addTask = function(){
+    if (!self.newTask()){
+      return;
+    }
     self.tasks.push(new Task(self.newTask()));
   };
 
