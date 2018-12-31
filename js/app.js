@@ -3,14 +3,6 @@ function Task(content){
   self.taskContent = ko.observable(content);
   self.isDone = ko.observable(false);
   self.editing = ko.observable(false);
-  self.detailsEnabled= ko.observable(false);
-  self.enableDetails= function() {
-    self.detailsEnabled(true);
-  };
-  self.disableDetails= function() {
-        this.detailsEnabled(false);
-  };
-
   // Behaviors
   self.edit = function() { this.editing(true) }
 

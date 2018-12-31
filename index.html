@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-
   </head>
   <body>
     <main>
@@ -14,7 +12,7 @@
         <input class="task-box" data-bind="value: newTask">
         <button data-bind="click: addTask">Add new task</button>
         <div class="list-group" data-bind="foreach:tasks">
-          <a href="#" class="list-group-item list-group-item-action" data-bind="event: {mouseover: enableDetails, mouseout: disableDetails}">
+          <a href="#" class="list-group-item list-group-item-action">
             <b data-bind="visible: !editing(), text: taskContent, style: {textDecoration: isDone()? 'line-through': 'none'}">&nbsp;</b>
             <input data-bind="visible: editing, value: taskContent, hasFocus: editing" />
             <span class="glyphicon glyphicon-edit" data-bind="click: edit"></span>
