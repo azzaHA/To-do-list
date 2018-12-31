@@ -2,6 +2,10 @@ function Task(content){
   var self = this;
   self.taskContent = ko.observable(content);
   self.isDone = ko.observable(false);
+  self.editing = ko.observable(false);
+
+  // Behaviors
+  self.edit = function() { this.editing(true) }
 
   self.toggleTaskState = function(){
     self.isDone(!self.isDone());
@@ -50,7 +54,6 @@ function ToDoViewModel(){
   self.removeTask = function(task){
     self.tasks.remove(task);
   };
-
 
 
 }
