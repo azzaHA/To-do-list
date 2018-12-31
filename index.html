@@ -13,7 +13,8 @@
         <input class="task-box" data-bind="value: newTask">
         <button type="button" data-bind="click: addTask">Add new task</button>
         <div class="list-group" data-bind="foreach:tasks">
-          <a href="#" class="list-group-item" data-bind="text: taskContent, click: toggleTaskState"></a>
+          <a href="#" class="list-group-item" data-bind="text: taskContent, click: toggleTaskState,
+          style: {textDecoration: isDone()? 'line-through': 'none'}"></a>
           <!--
             <td data-bind="text: taskContent" ></td>
             <td data-bind="text: isDone"></td>
