@@ -18,7 +18,7 @@
           event: {mouseover: enableDetails, mouseout: disableDetails}">
             <b data-bind="visible: !editing(), text: taskContent, click: edit">&nbsp;</b>
             <input data-bind="visible: editing, value: taskContent, hasFocus: editing" />
-            <span data-bind="click: $root.removeTask">Delete</span>
+            <span class="glyphicon glyphicon-remove" data-bind="click: $root.removeTask"></span>
           </a>
         </div>
 
