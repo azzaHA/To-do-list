@@ -44,6 +44,7 @@ function ToDoViewModel(){
       return;
     }
     self.tasks.push(new Task(self.newTask()));
+    self.newTask('');
   };
 
   self.removeTask = function(task){
