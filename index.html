@@ -14,9 +14,8 @@
         <input class="task-box" data-bind="value: newTask">
         <button data-bind="click: addTask">Add new task</button>
         <div class="list-group" data-bind="foreach:tasks">
-          <a href="#" class="list-group-item list-group-item-action" data-bind="style: {textDecoration: isDone()? 'line-through': 'none'},
-          event: {mouseover: enableDetails, mouseout: disableDetails}">
-            <b data-bind="visible: !editing(), text: taskContent">&nbsp;</b>
+          <a href="#" class="list-group-item list-group-item-action" data-bind="event: {mouseover: enableDetails, mouseout: disableDetails}">
+            <b data-bind="visible: !editing(), text: taskContent, style: {textDecoration: isDone()? 'line-through': 'none'}">&nbsp;</b>
             <input data-bind="visible: editing, value: taskContent, hasFocus: editing" />
             <span class="glyphicon glyphicon-edit" data-bind="click: edit"></span>
             <span class="glyphicon glyphicon-check" data-bind="click: toggleTaskState"></span>
