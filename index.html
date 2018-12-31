@@ -12,16 +12,15 @@
       <h3>My TODOs</h3>
         <input class="task-box" data-bind="value: newTask">
         <button type="button" data-bind="click: addTask">Add new task</button>
-      <table>
-        <tbody data-bind="foreach:tasks">
-          <tr>
+        <ul data-bind="foreach:tasks">
+          <li data-bind="text: taskContent"></li>
+          <!--
             <td data-bind="text: taskContent" ></td>
             <td data-bind="text: isDone"></td>
             <td><button data-bind="click: toggleTaskState">Check done</button></td>
-            <td><a href="#" data-bind="click: $root.removeTask">Delete</a></td>
-          </tr>
-        </tbody>
-      </table>
+            <td><a href="#" data-bind="click: $root.removeTask">Delete</a></td> -->
+        </ul>
+
       <container data-bind="visible: totalTasks">
         <h4>Number of tasks: <span data-bind="text: totalTasks"></span></h4>
         <h4>Number of done tasks: <span data-bind="text: doneTasks"></span></h4>
