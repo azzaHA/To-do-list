@@ -54,7 +54,10 @@ function ToDoViewModel(){
     if (!self.newTask()){
       return;
     }
-    self.tasks.push(new Task(self.newTask()));
+    var taskText = self.newTask();
+    taskText = taskText.trim();
+    self.newTask(taskText);
+    self.tasks.push(new Task(taskText));
     self.newTask('');
   };
 
