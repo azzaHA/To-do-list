@@ -14,10 +14,12 @@
         <input class="task-box" data-bind="value: newTask">
         <button data-bind="click: addTask">Add new task</button>
         <div class="list-group" data-bind="foreach:tasks">
-          <a href="#" class="list-group-item list-group-item-action" data-bind="click: toggleTaskState, style: {textDecoration: isDone()? 'line-through': 'none'},
+          <a href="#" class="list-group-item list-group-item-action" data-bind="style: {textDecoration: isDone()? 'line-through': 'none'},
           event: {mouseover: enableDetails, mouseout: disableDetails}">
-            <b data-bind="visible: !editing(), text: taskContent, click: edit">&nbsp;</b>
+            <b data-bind="visible: !editing(), text: taskContent">&nbsp;</b>
             <input data-bind="visible: editing, value: taskContent, hasFocus: editing" />
+            <span class="glyphicon glyphicon-edit" data-bind="click: edit"></span>
+            <span class="glyphicon glyphicon-check" data-bind="click: toggleTaskState"></span>
             <span class="glyphicon glyphicon-remove" data-bind="click: $root.removeTask"></span>
           </a>
         </div>
