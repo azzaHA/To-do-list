@@ -11,11 +11,13 @@
     <main>
       <h3>My TODOs</h3>
         <input class="task-box" data-bind="value: newTask">
-        <button type="button" data-bind="click: addTask">Add new task</button>
+        <button data-bind="click: addTask">Add new task</button>
         <div class="list-group" data-bind="foreach:tasks">
-          <a href="#" class="list-group-item list-group-item-action" data-bind="click: toggleTaskState, style: {textDecoration: isDone()? 'line-through': 'none'}">
+          <a href="#" class="list-group-item list-group-item-action" data-bind="click: toggleTaskState, style: {textDecoration: isDone()? 'line-through': 'none'},
+          event: {mouseover: enableDetails, mouseout: disableDetails}">
             <b data-bind="visible: !editing(), text: taskContent, click: edit">&nbsp;</b>
             <input data-bind="visible: editing, value: taskContent, hasFocus: editing" />
+            <span data-bind="click: $root.removeTask">Delete</span>
           </a>
           <!--
             <td><a href="#" data-bind="click: $root.removeTask">Delete</a></td> -->
