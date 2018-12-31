@@ -6,3 +6,9 @@ body {
 main {
   display: inline-block;
 }
+
+.task-box {
+  width: 300px;
+  height: 30px;
+  font-size: x-large;
+}
