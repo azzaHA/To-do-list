@@ -6,6 +6,8 @@ function Task(content){
   self.isDone = ko.observable(false);
   // editing denotes whether it's view or edit mode
   self.editing = ko.observable(false);
+  // high priority indicator
+  self.priority = ko.observable(false);
 
   // Behaviors
 
@@ -17,6 +19,11 @@ function Task(content){
   // toggle 'isDone' state
   self.toggleTaskState = function(){
     self.isDone(!self.isDone());
+  };
+
+  // toggle 'priority' state
+  self.togglePriority = function(){
+    self.priority(!self.priority());
   };
 }
 
