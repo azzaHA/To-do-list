@@ -24,6 +24,7 @@ function Task(content){
   // toggle 'priority' state
   self.togglePriority = function(){
     self.priority(!self.priority());
+    console.log(self.priority());
   };
 }
 
