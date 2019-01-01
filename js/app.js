@@ -30,14 +30,18 @@ function Task(content){
 
 function ToDoViewModel(){
 
+  // Data - observables
   var self = this;
   self.newTask = ko.observable('');
   self.tasks = ko.observableArray([]);
 
+  // Computed observables
+  // Total number of tasks to get done
   self.totalTasks = ko.computed(function(){
     return self.tasks().length;
   });
 
+  // Counting the completed tasks
   self.doneTasks = ko.computed(function(){
     var total = 0;
     for (var i=0; i<self.tasks().length; i++){
@@ -45,10 +49,10 @@ function ToDoViewModel(){
         total++;
       }
     }
-
     return total;
   });
 
+  // Counting the remaining tasks
   self.remainingTasks = ko.computed(function(){
     var total = 0;
     for (var i=0; i<self.tasks().length; i++){
@@ -59,6 +63,8 @@ function ToDoViewModel(){
     return total;
   });
 
+  //Behaviors
+  // Add new task
   self.addTask = function(){
     if (!self.newTask()){
       return;
@@ -70,6 +76,7 @@ function ToDoViewModel(){
     self.newTask('');
   };
 
+  // Remove the current task
   self.removeTask = function(task){
     self.tasks.remove(task);
   };
