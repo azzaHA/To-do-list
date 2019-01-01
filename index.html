@@ -10,8 +10,10 @@
     <div class="col-sm-4"></div>
     <main class="col-sm-4">
       <h3>My TODOs</h3>
-        <input class="task-box" data-bind="value: newTask">
-        <button data-bind="click: addTask">Add new task</button>
+        <div class="row">
+          <input class="col-sm-9 task-box" data-bind="value: newTask">
+          <button class="col-sm-3" data-bind="click: addTask">Add new task</button>
+        </div>
         <div class="list-group" data-bind="foreach:tasks">
           <a href="#" class="list-group-item list-group-item-action" data-bind="css: {'list-group-item-warning': priority}">
             <span class="glyphicon glyphicon-check" data-bind="click: toggleTaskState"></span>
